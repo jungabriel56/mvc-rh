@@ -13,11 +13,8 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "cargos")
-public class Cargo implements Serializable{
+public class Cargo extends AbstractEntity<Long>{
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
 	
 	@Column(nullable = false, length = 50, unique = true)
 	private String nome;
@@ -27,12 +24,6 @@ public class Cargo implements Serializable{
 	private Departamento departamento;
 	
 	
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
 	public String getNome() {
 		return nome;
 	}

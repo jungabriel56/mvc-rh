@@ -11,22 +11,15 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "departamentos")
-public class Departamento implements Serializable{
+public class Departamento extends AbstractEntity<Long>{
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+
 	
 	@Column(nullable = false, length = 60, unique = true)
 	private String nome;
 	
 	
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
+
 	public String getNome() {
 		return nome;
 	}
