@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -34,7 +36,8 @@ public class Endereco extends AbstractEntity<Long>{
 	@Column(length = 10)
 	private Long numero;
 
-	@Column(nullable = false, length = 50)
+	@Column(nullable = false, length = 2)
+	//@Enumerated(EnumType.STRING)
 	private String uf;
 	
 	

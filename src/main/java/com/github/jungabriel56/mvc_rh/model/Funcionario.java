@@ -21,7 +21,7 @@ public class Funcionario extends AbstractEntity<Long>{
 	@Column(columnDefinition = "DATE")
 	private LocalDate dataSaida;
 	
-	@Column(nullable = false, length = 60)
+	@Column(name = "nome_funcionario", nullable = false, length = 60)
 	private String nome;
 	
 	@Column(nullable = false, columnDefinition = "NUMERIC(15,2)")
