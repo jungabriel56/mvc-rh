@@ -1,14 +1,12 @@
 package com.github.jungabriel56.mvc_rh.model;
 
-import java.io.Serializable;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
@@ -37,8 +35,9 @@ public class Endereco extends AbstractEntity<Long>{
 	private Long numero;
 
 	@Column(nullable = false, length = 2)
-	//@Enumerated(EnumType.STRING)
-	private String uf;
+	@Enumerated(EnumType.STRING)
+	@JdbcTypeCode(SqlTypes.CHAR)
+	private Uf uf;
 	
 	
 	
@@ -78,10 +77,10 @@ public class Endereco extends AbstractEntity<Long>{
 	public void setNumero(Long numero) {
 		this.numero = numero;
 	}
-	public String getUf() {
+	public Uf getUf() {
 		return uf;
 	}
-	public void setUf(String uf) {
+	public void setUf(Uf uf) {
 		this.uf = uf;
 	}
 	
