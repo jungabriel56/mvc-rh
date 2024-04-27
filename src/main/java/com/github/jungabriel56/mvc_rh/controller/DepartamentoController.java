@@ -13,6 +13,11 @@ public class DepartamentoController {
 		return "departamento/list";
 	}
 	
+	@GetMapping("cargos")
+	public String cargosByDepartamento() {
+		return "departamento/list_cargos";
+	}
+	
 	@GetMapping("form")
 	public String form() {
 		return "departamento/form";

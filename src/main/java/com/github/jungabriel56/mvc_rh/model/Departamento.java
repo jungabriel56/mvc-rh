@@ -1,12 +1,10 @@
 package com.github.jungabriel56.mvc_rh.model;
 
-import java.io.Serializable;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -18,7 +16,8 @@ public class Departamento extends AbstractEntity<Long>{
 	@Column(nullable = false, length = 60, unique = true)
 	private String nome;
 	
-	
+	@OneToOne(mappedBy = "departamento")
+	private List<Cargo> cargos;
 
 	public String getNome() {
 		return nome;
