@@ -7,6 +7,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -30,10 +31,22 @@ public class Endereco extends AbstractEntity<Long>{
 
 	@Column(length = 100)
 	private String logradouro;
+
+	@OneToOne(mappedBy = "endereco")
+	private Funcionario funcionario;
+
 	
+	public Funcionario getFuncionario() {
+		return funcionario;
+	}
+	public void setFuncionario(Funcionario funcionario) {
+		this.funcionario = funcionario;
+	}
 	@Column(length = 10)
 	private Long numero;
+	
 
+	
 	@Column(nullable = false, length = 2)
 	@Enumerated(EnumType.STRING)
 	@JdbcTypeCode(SqlTypes.CHAR)
