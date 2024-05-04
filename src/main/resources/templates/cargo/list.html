@@ -2,54 +2,60 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cargos</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cargos</title>
+<link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
+	<div th:replace="layout/header :: headerfragment"></div>
+	<div th:replace="layout/menu :: menufragment"></div>
 
-    <div class="container">
+	<div id="content">
+		<div class="container">
 
-        <h1>Listagem de Cargos</h1>
+			<h3>Listagem de Cargos</h3>
 
-        <button class="btn btn-outline-primary btn-sm">novo</button>
+			<button class="btn btn-outline-primary btn-sm">novo</button>
 
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Cargo</th>
-                    <th>Departamento</th>
-                </tr>
-            </thead>
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Cargo</th>
+						<th>Departamento</th>
+					</tr>
+				</thead>
 
-            <tbody >
-                <tr>
-                    <td>1</td>
-                    <td>Desenvolvedor</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Scrum Master</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Gerente</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Faturamento</td>
-                </tr>
-            </tbody>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>Desenvolvedor</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>Scrum Master</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>Gerente</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>Faturamento</td>
+					</tr>
+				</tbody>
 
-        </table>
+			</table>
 
-        
-    </div>
 
+		</div>
+	</div>
+	<footer id="footer" class="footer text-center"> &copy;2024
+		turma de microservices </footer>
 
 </body>
 

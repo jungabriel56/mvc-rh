@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("departamentos")
 public class DepartamentoController {
 
-	@GetMapping("list")
+	@GetMapping()
 	public String list() {
 		return "departamento/list";
 	}

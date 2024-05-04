@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("funcionarios")
 public class FuncionarioController {
 
-	@GetMapping("list")
+	@GetMapping()
 	public String list() {
 		return "funcionario/list";
 	}

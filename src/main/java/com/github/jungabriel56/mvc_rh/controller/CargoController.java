@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("cargos")
 public class CargoController {
 
-	@GetMapping("list")
+	@GetMapping()
 	public String list() {
 		return "cargo/list";
 	}
