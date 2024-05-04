@@ -4,7 +4,7 @@ import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -16,7 +16,7 @@ public class Departamento extends AbstractEntity<Long>{
 	@Column(nullable = false, length = 60, unique = true)
 	private String nome;
 	
-	@OneToOne(mappedBy = "departamento")
+	@OneToMany(mappedBy = "departamento")
 	private List<Cargo> cargos;
 
 	public String getNome() {
