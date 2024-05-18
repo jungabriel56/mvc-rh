@@ -5,40 +5,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Departamentos</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
+
+
+<div th:replace="layout/header :: headerfragment"></div>
+	<div th:replace="layout/menu :: menufragment"></div>
+
+	<div id="content">
 
     <div class="container">
 
         <h1>Listagem de Departamentos</h1>
 
-        <form class="">
+        <form th:action="@{/departamentos/save}" th:object="${departamento}" method="post">
 
             <div class="input-group mb-3">
-                <div class="input-group-prepend">        
-                </div>
+                <div class="input-group-prepend"></div>
                 <div class="input-group-text">Id</div>
-                    <input type="text" class="form-control" id="id">
+                    <input type="text" class="form-control" id="id" th:field="*{id}" readonly>
             </div>
 
             <div class="input-group mb-3">
-                <div class="input-group-prepend">        
-                </div>
+                <div class="input-group-prepend"></div>
                 <div class="input-group-text">Nome</div>
-                    <input type="text" class="form-control" id="nome">
+                    <input type="text" class="form-control" id="nome"  th:field="*{nome}">
             </div>
-            <button class="btn btn-outline-primary btn-sm">Confirmar</button>
-            <button class="btn btn-outline-danger btn-sm">Cancelar</button>
+            
+            <button type="submit" class="btn btn-primary btn-sm">Confirmar</button>
+            <a th:href="@{/departamentos}" class="btn btn-secondary btn-sm">Cancelar</a>
 
         </form>
 
-       
-
-        
     </div>
+    </div>
+    
+    <footer id="footer" class="footer text-center"> &copy;2024
+		turma de microservices 
+    </footer>
 
 
 </body>

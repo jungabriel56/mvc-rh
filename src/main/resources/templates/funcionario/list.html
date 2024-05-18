@@ -19,7 +19,7 @@
 
 			<h3>Listagem de Funcionarios</h3>
 			
-			<a href="funcionarios/form" class="btn-sm btn-primary"><i class="fas fa-plus"></i>Novo</a>
+			<a href="funcionarios/add" class="btn-sm btn-primary"><i class="fas fa-plus"></i></a>
 
 			<table class="table table-hover">
 				<thead>
@@ -33,22 +33,16 @@
 				</thead>
 
 				<tbody>
-					<tr>
-						<td>1</td>
-						<td>Pelé</td>
-						<td>R$ 100.000,00</td>
-						<td>São Paulo/SP</td>
-						<td>
-							<a class="btn-sm btn-primary" href="/funcionarios/update">Editar</a>
-							<a class="btn-sm btn-danger" href="/funcionarios/delete">Excluir</a>
-						</td>
-					</tr>
-					<tr>
-						<td>2</td>
-						<td>Messi</td>
-						<td>R$ 500.000,00</td>
-						<td>Fortaleza/CE</td>
-					</tr>
+					 <tr th:each="funcionario : ${funcionarios}">
+               		<td th:text="${funcionario.id}"></td>
+                   	<td th:text="${funcionario.nome}"></td>
+                   	<td></td>
+                   	<td></td>
+                   	<td>
+                   		<a class="btn-sm btn-primary" th:href="@{/funcionarios/update/{id}(id=${funcionario.id})}">Editar</a>
+	                   	<a class="btn-sm btn-danger" th:href="@{/funcionarios/delete/{id}(id=${funcionario.id})}">Excluir</a>
+                   	</td>               
+               </tr>  
 
 				</tbody>
 

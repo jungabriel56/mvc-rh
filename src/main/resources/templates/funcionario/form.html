@@ -19,20 +19,22 @@
 
 			<h3>Listagem de funcionarios</h3>
 
-			<form class="">
+			<form th:action="@{/funcionarios/save}" th:object="${funcionario}" method="post">
 
 				<div class="input-group mb-3">
 					<div class="input-group-prepend"></div>
 					<div class="input-group-text">Id</div>
-					<input type="text" class="form-control" id="id">
+					<input type="text" class="form-control" id="id"  th:field="*{id}" readonly>
 				</div>
 
 				<div class="input-group mb-3">
 					<div class="input-group-prepend"></div>
 					<div class="input-group-text">Nome</div>
-					<input type="text" class="form-control" id="nome">
+					<input type="text" class="form-control" id="nome"   th:field="*{nome}">
 				</div>
-
+				
+				
+<!-- 
 				<div class="input-group mb-3">
 					<div class="input-group-prepend"></div>
 					<div class="input-group-text">Data de Entrada</div>
@@ -60,6 +62,11 @@
 
 				<button class="btn btn-outline-primary btn-sm">Confirmar</button>
 				<button class="btn btn-outline-danger btn-sm">Cancelar</button>
+				 -->
+				 
+				 
+				 <button type="submit" class="btn btn-primary btn-sm">Confirmar</button>
+            <a th:href="@{/funcionarios}" class="btn btn-secondary btn-sm">Cancelar</a>
 
 			</form>
 
