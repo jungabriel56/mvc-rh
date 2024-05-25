@@ -39,11 +39,17 @@
                     <input type="text" class="form-control" id="nome" th:field="*{nome}">
             </div>
 
-         <label for="id_departamento">Departamentos</label>
+
+         
+          <div class="input-group mb-3">
+                <div class="input-group-prepend">        
+               
+                <div class="input-group-text">Departamento</div>
+                 </div>
             <select class="form-control" id="id_departamento">
+                <option value="">--Selecionar--</option>
                 <option value="10">RH</option>
-                <option  value="11">Financeiro</option>
-                <option  value="12">Vendas</option>
+                
             </select>
 
             <button type="submit" class="btn btn-primary btn-sm">Confirmar</button>
